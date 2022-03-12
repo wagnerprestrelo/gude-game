@@ -19,7 +19,7 @@ footer {
 }
 
 body{
-    background-image: url('bg.jpg');
+    background-image: url('../imagens/bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -27,13 +27,14 @@ body{
 
 main {
     display: flex;
-    height: 70%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#conteudo {
+#conteudo, form {
+    background-color: black;
+    color: #CCCCCC;
     margin: 10px;
     width: fit-content;
     height: fit-content;
@@ -45,11 +46,29 @@ main {
     text-align: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+form > p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form > p:last-of-type {
+    justify-content: center;
+}
+
 input {
     padding: 10px;
     font-size: 14px;
     border-radius: 10x;
 }
+
 h1{
     font-size: 36px;
     position: relative;

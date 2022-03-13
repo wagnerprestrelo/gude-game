@@ -12,12 +12,12 @@
         <main>
             <form>
                 <h2>Cadastro</h2>
-                <p><label>Login:</label> <input type="text" placeholder="Digite seu nome de usuário" /></p>
-                <p><label>Senha:</label> <input type="password" placeholder="Digite sua senha" /></p>
-                <p><label>Confirmar Senha:</label> <input type="password" placeholder="Confirme sua senha" /></p>
-                <p><label>E-mail:</label> <input type="email" placeholder="exemplo@exemplo.com" /></p>
-                <p><label>Confirmar E-mail:</label> <input type="email" placeholder="Confirmar E-mail" /></p>
-                <p><input type="submit" value="Cadastrar" /></p>
+                <p><label>Login:</label> <input id="login" type="text" placeholder="Digite seu nome de usuário" /></p>
+                <p><label>Senha:</label> <input id = "senha" type="password" placeholder="Digite sua senha" /></p>
+                <p><label>Confirmar Senha:</label> <input id = "senhaConfirmacao" type="password" placeholder="Confirme sua senha" /></p>
+                <p><label>E-mail:</label> <input id="email" type="email" placeholder="exemplo@exemplo.com" /></p>
+                <p><label>Confirmar E-mail:</label> <input id="emailConfirmacao" type="email" placeholder="Confirmar E-mail" /></p>
+                <p><input type="submit" value="Cadastrar" onclick="validar()" /></p>
             </form>
         </main>
         <footer>
@@ -26,4 +26,27 @@
             </div>
         </footer>
     </body>
+
+    <script>
+        function validar(){
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("senha").value;
+            var senhaConfirmacao = document.getElementById("senhaConfirmacao").value;
+            var email = document.getElementById("email").value;
+            var emailConfirmacao = document.getElementById("emailConfirmacao").value;
+            if (login == "") {
+                alert ("Login não preenchido");
+                return;
+            }
+            if (senha != senhaConfirmacao) {
+                alert ("Senhas não são iguais");
+                return;
+            }
+            if (email != emailConfirmacao) {
+                alert ("Emails não são iguais");
+                return;
+            }
+            //alert ("Hello world!");
+        }
+    </script>
 </html>

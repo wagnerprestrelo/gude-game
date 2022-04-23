@@ -9,12 +9,13 @@
             <h1><a href="index.html">Gude Game</a></h1>
         </header>
         <main>
-            <div id="conteudo">
+            <form action="login.php" method="post" onsubmit="return validar()">
                 <h2>Login</h2>
-                <p><input type="text" /></p>
-                <p><input type="password" /></p>
+                <p><label>Login:</label> <input name ="login" id="login" type="text" placeholder="Digite seu nome de usuário" /></p>
+                <p><label>Senha:</label> <input name ="senha" id = "senha" type="password" placeholder="Digite sua senha" /></p>
+                <p><input type="submit" value="Logar"/></p>
                 <a href="cadastro.html">Cadastro</a>
-            </div>
+            </form>
         </main>
         <footer>
             <div id="sobre">
@@ -22,4 +23,22 @@
             </div>
         </footer>
     </body>
+
+    <script>
+        function validar(){
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("senha").value;
+            if (login == "") {
+                alert ("Login não preenchido");
+                return false;
+            }
+            if (senha == "") {
+                alert ("Senha não preenchida");
+                return false;
+            } else {
+                return true;
+            }
+            //alert ("Hello world!");
+        }
+    </script>
 </html>

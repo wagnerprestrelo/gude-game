@@ -6,15 +6,25 @@
     </head>
     <body>
         <header>
-            <h1><a href="index.html">Gude Game</a></h1>
+            <h1><a href="index.php">Gude Game</a></h1>
         </header>
         <main>
             <form action="login.php" method="post" onsubmit="return validar()">
-                <h2>Login</h2>
-                <p><label>Login:</label> <input name ="login" id="login" type="text" placeholder="Digite seu nome de usuário" /></p>
-                <p><label>Senha:</label> <input name ="senha" id = "senha" type="password" placeholder="Digite sua senha" /></p>
-                <p><input type="submit" value="Logar"/></p>
-                <a href="cadastro.html">Cadastro</a>
+                <fieldset>
+                    <legend>Login</legend>
+                    <div>
+                        <label for="login">Usuário:</label> 
+                        <input name ="login" id="login" class="login" type="text" placeholder="Digite seu nome de usuário" />
+                    </div>
+                    <div>
+                        <label for="senha">Senha:</label> 
+                        <input name ="senha" id = "senha" class="senha" type="password" placeholder="Digite sua senha" />
+                    </div>
+                    <div>
+                        <input type="submit" class="submit" value="Logar"/>
+                        <a href="cadastro.html">Cadastro</a>
+                    </div>
+                </fieldset>
             </form>
         </main>
         <footer>

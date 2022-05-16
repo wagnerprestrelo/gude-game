@@ -7,17 +7,37 @@
 
     <body>
         <header>
-            <h1><a href="index.html">Gude Game</a></h1>
+            <h1><a href="index.php">Gude Game</a></h1>
         </header>
         <main>
-            <form action="inserir.php" method="post">
-                <h2>Cadastro</h2>
-                <p><label>Login:</label> <input name ="login" id="login" type="text" placeholder="Digite seu nome de usuário" /></p>
-                <p><label>Senha:</label> <input name ="senha" id = "senha" type="password" placeholder="Digite sua senha" /></p>
-                <p><label>Confirmar Senha:</label> <input id = "senhaConfirmacao" type="password" placeholder="Confirme sua senha" /></p>
-                <p><label>E-mail:</label> <input name ="email" id="email" type="email" placeholder="exemplo@exemplo.com" /></p>
-                <p><label>Confirmar E-mail:</label> <input id="emailConfirmacao" type="email" placeholder="Confirmar E-mail" /></p>
-                <p><input type="submit" value="Cadastrar" onclick="validar()" /></p>
+            <form action="inserir.php" method="post" onsubmit="return validar()">
+                <fieldset>
+                    <legend>Cadastro</legend>
+                    <div>
+                        <label for="login">Usuário:</label> 
+                        <input name ="login" id="login" class="login" type="text" placeholder="Digite seu nome de usuário" />
+                    </div>
+                        <div>  
+                        <label for="senha">Senha:</label> 
+                        <input name ="senha" id = "senha" class="senha" type="password" placeholder="Digite sua senha" />
+                    </div>
+                    <div>
+                        <label for="senhaConfirmacao">Confirmar Senha:</label> 
+                        <input id = "senhaConfirmacao" class="senha" type="password" placeholder="Confirme sua senha" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label> 
+                        <input name ="email" id="email" class="email" type="email" placeholder="exemplo@exemplo.com" />
+                    </div>
+                    <div>
+                        <label for="emailConfirmacao">Confirmar E-mail:</label> 
+                        <input id="emailConfirmacao" class="email" type="email" placeholder="Confirmar E-mail" />
+                    </div>
+                    <div>
+                        <input type="submit" class="submit" value="Cadastrar" />
+                    </div>
+                </fieldset>
+                
             </form>
         </main>
         <footer>
@@ -36,17 +56,19 @@
             var emailConfirmacao = document.getElementById("emailConfirmacao").value;
             if (login == "") {
                 alert ("Login não preenchido");
-                return;
+                document.getElementById("login").focus();
+                return false;
             }
             if (senha != senhaConfirmacao) {
                 alert ("Senhas não são iguais");
-                return;
+                document.getElementById("senha").focus();
+                return false;
             }
             if (email != emailConfirmacao) {
                 alert ("Emails não são iguais");
-                return;
+                document.getElementById("email").focus();
+                return false;
             }
-            //alert ("Hello world!");
         }
     </script>
 </html>

@@ -63,10 +63,69 @@ form > p:last-of-type {
     justify-content: center;
 }
 
+fieldset {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #AAAAAA;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+fieldset > div {
+    padding: 0.5em;
+}
+
+fieldset > div > a, input.submit {
+    background-color: #CCCCCC;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid black;
+    height: 20px;
+}
+
+input.submit {
+    height: 42px;
+}
+
+fieldset > div > a:hover {
+    background-color: #FFFFFF;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
 input {
     padding: 10px;
     font-size: 14px;
     border-radius: 10x;
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+input.login{
+    background-image: url(../imagens/icone-usuario.png);
+}
+
+input.senha{
+    background-image: url(../imagens/icone-senha.png);
+}
+
+input.email{
+    background-image: url(../imagens/icone-email.png);
+}
+
+input.submit:hover{
+    background-color: #FFFFFF;
 }
 
 h1{
@@ -92,5 +151,12 @@ a {
     font-family: Verdana;
     text-align: center;
     color: cyan;
+}
+
+header a {
+    -webkit-text-stroke: 1px black;
+}
+
+footer a {
     -webkit-text-stroke: 1px black;
 }

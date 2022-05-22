@@ -74,7 +74,7 @@ fieldset > div {
     padding: 0.5em;
 }
 
-fieldset > div > a, input.submit {
+fieldset > div > a, input.submit{
     background-color: #CCCCCC;
     color: #000000;
     padding: 10px;

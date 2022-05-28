@@ -74,7 +74,7 @@ fieldset > div {
     padding: 0.5em;
 }
 
-fieldset > div > a, input.submit{
+fieldset > div > a, input.submit, button{
     background-color: #CCCCCC;
     color: #000000;
     padding: 10px;
@@ -86,8 +86,13 @@ fieldset > div > a, input.submit{
     height: 20px;
 }
 
-input.submit {
+input.submit, button {
     height: 42px;
+}
+
+button:disabled {
+    background-color: darkslategrey;
+    color: gray;
 }
 
 fieldset > div > a:hover {

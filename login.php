@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION["login"])){
+if (isset($_SESSION["usuario_id"])){
     header('Location: usuario.php');
 }
 ?>
@@ -55,7 +55,6 @@ if (isset($_SESSION["login"])){
             } else {
                 return true;
             }
-            //alert ("Hello world!");
         }
     </script>
 </html>

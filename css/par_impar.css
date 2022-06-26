@@ -1,0 +1,27 @@
+main div {
+    background-color: black;
+    border: 1px solid red;
+    color: white;
+    padding: 10px;
+}
+
+#resultado {
+    display: flex;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#jogador{
+    align-self: left;
+}
+
+#adversario{
+    align-self: right;
+}
+
+#resultado{
+    align-self: center;
+}

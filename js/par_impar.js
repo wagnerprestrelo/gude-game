@@ -22,12 +22,13 @@ function escolhaJogador(){
     }
     var parOuImpar = document.getElementById("par-impar");
     if (parOuImpar.value == resultadoParImpar) {
-        window.location = "par_impar_vitoria.php";
+    var parOuImpar = document.getElementById("par-impar");
+        window.location = "par_impar_vitoria.php?resultado="+resultadoFinal;
         /*document.getElementById("ganhou-ou-perdeu").innerHTML = "<p>Você venceu!</p>";
         vitJogador++;
         document.getElementById("vitorias-jogador").innerHTML = vitJogador;*/
     } else {
-        window.location = "par_impar_derrota.php";
+        window.location = "par_impar_derrota.php?resultado="+resultadoFinal;
         /*document.getElementById("ganhou-ou-perdeu").innerHTML = "<p>Você perdeu.</p>";
         vitAdversario++;
         document.getElementById("vitorias-adversario").innerHTML = vitAdversario;*/

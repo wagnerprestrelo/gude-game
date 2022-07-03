@@ -3,6 +3,9 @@ session_start();
 if (! isset($_SESSION["usuario_id"])){
     header('Location: login.php');
 }
+$link = mysqli_connect("localhost", "root", "", "gude_game");
+$result = mysqli_query($link, "SELECT qtd_bolinhas FROM usuarios WHERE id = '{$_SESSION["usuario_id"]}'");
+$dados = mysqli_fetch_assoc($result);
 ?>
 
 <html>
@@ -59,15 +62,19 @@ if (! isset($_SESSION["usuario_id"])){
                     <p id="resultado-par-impar"></p>
                     <p id="ganhou-ou-perdeu">
                         <?php
-                        if (isset($_GET['vitoria'])) {
-                            if ($_GET['vitoria'] == 1) {
-                                echo 'Vitória';
+                        if (isset($_GET["vitoria"])) {
+                            if ($_GET["vitoria"] == 1) {
+                                echo "Vitória";
                             } else { 
-                                echo 'Derrota';
+                                echo "Derrota";
                             }
-                        }
+                        } 
+                        echo "<br> O resultado foi: ".$_GET["resultado"];
                         ?>
                     </p>
+                </div>
+                <div>
+                    <p>Você possui: <?= $dados["qtd_bolinhas"] ?> bolinhas de gude.</p>
                 </div>
             </div>
         </main>

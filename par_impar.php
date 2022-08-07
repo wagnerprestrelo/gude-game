@@ -21,15 +21,15 @@ $dados = mysqli_fetch_assoc($result);
         </header>
         <main>
             <div id=container>
-                <div id="jogador">
+                <form id="jogador" action="logica_jogo.php">
                     <label for="par-impar">Par ou Ímpar?</label> <br>
-                    <select id="par-impar">
+                    <select id="par-impar" name="par-impar">
                     <option value="par">Par</option>
                     <option value="impar">Ímpar</option>
                     </select>
                     <br> <br>
                     <label for="num-jogador">Escolha um número: </label> <br>
-                    <select id="num-jogador">
+                    <select id="num-jogador" name="num-jogador">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -41,11 +41,11 @@ $dados = mysqli_fetch_assoc($result);
                     <option value="8">8</option>
                     <option value="9">9</option>
                     </select>
-                    <button onclick="escolhaJogador()" id="botao-escolha">Selecionar número</button>
+                    <input type="submit" id="botao-escolha">Selecionar número</input>
                     <p id="escolha-jogador"></p>
                     <p>Vitórias: </p>
                     <p id="vitorias-jogador">0</p>
-                </div>
+                </form>
                 <div id="adversario">
                     <p>Número do adversário:</p>
                     <p id="escolha-adversario"></p>

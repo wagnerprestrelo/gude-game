@@ -52,8 +52,12 @@ $dados = mysqli_fetch_assoc($result);
                     <p>Vitórias: </p>
                     <p id="vitorias-adversario">0</p>
                 </div>
-                <div id ="resultado">
+
+                <?php if (isset($_GET["vitoria"])) { ?>
+                  <div id ="resultado">
                     <p>Resultado: </p>
+                    
+                    <!--
                     <p id="resultado-jogador"></p>
                     <p id="soma"></p>
                     <p id="resultado-adversario"></p>
@@ -61,6 +65,7 @@ $dados = mysqli_fetch_assoc($result);
                     <p id="resultado-final"></p>
                     <p id="resultado-par-impar"></p>
                     <p id="ganhou-ou-perdeu">
+              -->
                         <?php
                         if (isset($_GET["vitoria"])) {
                             if ($_GET["vitoria"] == 1) {
@@ -69,10 +74,13 @@ $dados = mysqli_fetch_assoc($result);
                                 echo "Derrota";
                             }
                         } 
-                        echo "<br> O resultado foi: ".$_GET["resultado"];
+                        echo "<br> O número foi ".$_GET["numero"];
+                        echo "<br> O resultado foi um número: ".$_GET["resultado"];
                         ?>
                     </p>
-                </div>
+                  </div>
+                <?php } ?>
+                
                 <div>
                     <p>Você possui: <?= $dados["qtd_bolinhas"] ?> bolinhas de gude.</p>
                 </div>

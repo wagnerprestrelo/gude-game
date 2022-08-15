@@ -15,12 +15,12 @@ if ($_GET["par-impar"] == $resultadosoma) {
   $link = mysqli_connect("localhost", "root", "", "gude_game");
 
   $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas + 1 WHERE id = '{$_SESSION["usuario_id"]}'");
-  header("Location: par_impar.php?vitoria=1&resultado={$_GET["resultado"]}");
+  header("Location: par_impar.php?vitoria=1&resultado=$resultadosoma&numero=$resultadofinal");
 } else {
   echo "Você perdeu.";
   session_start();
   $link = mysqli_connect("localhost", "root", "", "gude_game");
 
   $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas - 1 WHERE id = '{$_SESSION["usuario_id"]}'");
-  header("Location: par_impar.php?vitoria=0&resultado={$_GET["resultado"]}");
+  header("Location: par_impar.php?vitoria=0&resultado=$resultadosoma&numero=$resultadofinal");
 }

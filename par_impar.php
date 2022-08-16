@@ -75,7 +75,11 @@ $dados = mysqli_fetch_assoc($result);
                             }
                         } 
                         echo "<br> O número foi ".$_GET["numero"];
-                        echo "<br> O resultado foi um número: ".$_GET["resultado"];
+                          if ($_GET["resultado"] == "par") {
+                            echo "<br> Um número Par";
+                          } else {
+                            echo "<br> Um número Ímpar";
+                          }
                         ?>
                     </p>
                   </div>

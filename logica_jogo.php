@@ -1,4 +1,7 @@
 <?php 
+session_start();
+include "funcoes.php";
+$link = conectarBancoDeDados();
 $numjogador = $_GET["num-jogador"];
 $numadversario = rand(0, 9);
 $resultadofinal = $numjogador + $numadversario;
@@ -7,20 +10,15 @@ if ($resultadofinal % 2 == 0) {
 } else {
   $resultadosoma = "impar";
 }
-echo $numjogador;
-echo $numadversario;
-if ($_GET["par-impar"] == $resultadosoma) {
-  echo "Você venceu!";
-  session_start();
-  $link = mysqli_connect("localhost", "root", "", "gude_game");
+//echo $numjogador;
+//echo $numadversario;
 
-  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas + 1 WHERE id = '{$_SESSION["usuario_id"]}'");
+if ($_GET["par-impar"] == $resultadosoma) {
+  //echo "Você venceu!";
+  adicionarBolinhas($link, $_SESSION["usuario_id"], 1);
   header("Location: par_impar.php?vitoria=1&resultado=$resultadosoma&numero=$resultadofinal");
 } else {
-  echo "Você perdeu.";
-  session_start();
-  $link = mysqli_connect("localhost", "root", "", "gude_game");
-
-  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas - 1 WHERE id = '{$_SESSION["usuario_id"]}'");
+  //echo "Você perdeu.";
+  removerBolinhas($link, $_SESSION["usuario_id"], 1);
   header("Location: par_impar.php?vitoria=0&resultado=$resultadosoma&numero=$resultadofinal");
 }

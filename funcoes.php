@@ -37,10 +37,10 @@ function gerarBolinhas($link, $id, $qtd=5) {
   $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = $qtd WHERE id = $id");
 }
 
-function adicionarBolinhas($link, $qtd) {
-  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas + $qtd WHERE id = '{$_SESSION["usuario_id"]}'"); 
+function adicionarBolinhas($link, $id, $qtd=1) {
+  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas + $qtd WHERE id = $id"); 
 }
 
-function removerBolinhas($link, $qtd) {
-  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas - $qtd WHERE id = '{$_SESSION["usuario_id"]}'");
+function removerBolinhas($link, $id, $qtd=1) {
+  $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas - $qtd WHERE id = $id");
 }

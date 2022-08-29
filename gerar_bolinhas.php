@@ -1,6 +1,6 @@
 <?php
 session_start();
-$link = mysqli_connect("localhost", "root", "", "gude_game");
-
-$result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = 5 WHERE id = '{$_SESSION["usuario_id"]}'");
+include "funcoes.php";
+$link = conectarBancoDeDados();
+gerarBolinhas($link, $_SESSION["usuario_id"], 5);
 header('Location: usuario.php');

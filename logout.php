@@ -1,5 +1,4 @@
 <?php
-session_start();
-unset($_SESSION["usuario_id"]);
-
+include "funcoes.php";
+deslogarUsuario();
 header("Location: login.php");

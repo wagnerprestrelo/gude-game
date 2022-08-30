@@ -1,11 +1,11 @@
 <?php
 session_start();
+include "funcoes.php";
 if (! isset($_SESSION["usuario_id"])){
     header('Location: login.php');
 }
-$link = mysqli_connect("localhost", "root", "", "gude_game");
-$result = mysqli_query($link, "SELECT qtd_bolinhas FROM usuarios WHERE id = '{$_SESSION["usuario_id"]}'");
-$dados = mysqli_fetch_assoc($result);
+$link = conectarBancoDeDados();
+$dados = pegarDadosUsuario($link, $_SESSION["usuario_id"]);
 ?>
 
 <html>

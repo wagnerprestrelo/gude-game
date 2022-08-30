@@ -44,3 +44,8 @@ function adicionarBolinhas($link, $id, $qtd=1) {
 function removerBolinhas($link, $id, $qtd=1) {
   $result = mysqli_query($link, "UPDATE usuarios SET qtd_bolinhas = qtd_bolinhas - $qtd WHERE id = $id");
 }
+
+function pegarDadosUsuario($link, $id) {
+  $result = mysqli_query($link, "SELECT * FROM usuarios WHERE id = $id");
+  return mysqli_fetch_array($result, MYSQLI_ASSOC);
+}

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Gude Game - Cadastro</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/estilo_geral.css" />
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="index.php">Gude Game</a></h1>
+        </header>
+        <main>
+            <form action="inserir.php" method="post" onsubmit="return validar()">
+                <fieldset>
+                    <legend>Cadastro</legend>
+                    <div>
+                        <label for="login">Usuário:</label> 
+                        <input name ="login" id="login" class="login" type="text" placeholder="Digite seu nome de usuário" />
+                    </div>
+                        <div>  
+                        <label for="senha">Senha:</label> 
+                        <input name ="senha" id = "senha" class="senha" type="password" placeholder="Digite sua senha" />
+                    </div>
+                    <div>
+                        <label for="senhaConfirmacao">Confirmar Senha:</label> 
+                        <input id = "senhaConfirmacao" class="senha" type="password" placeholder="Confirme sua senha" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label> 
+                        <input name ="email" id="email" class="email" type="email" placeholder="exemplo@exemplo.com" />
+                    </div>
+                    <div>
+                        <label for="emailConfirmacao">Confirmar E-mail:</label> 
+                        <input id="emailConfirmacao" class="email" type="email" placeholder="Confirmar E-mail" />
+                    </div>
+                    <div>
+                        <input type="submit" class="submit" value="Cadastrar" />
+                    </div>
+                </fieldset>  
+            </form>
+        </main>
+        <footer>
+            <div id="sobre">
+                <p><a href="sobre.html">Sobre</a> </p>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+        function validar(){
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("senha").value;
+            var senhaConfirmacao = document.getElementById("senhaConfirmacao").value;
+            var email = document.getElementById("email").value;
+            var emailConfirmacao = document.getElementById("emailConfirmacao").value;
+            if (login == "") {
+                alert ("Login não preenchido");
+                document.getElementById("login").focus();
+                return false;
+            }
+            if (senha != senhaConfirmacao) {
+                alert ("Senhas não são iguais");
+                document.getElementById("senha").focus();
+                return false;
+            }
+            if (email != emailConfirmacao) {
+                alert ("Emails não são iguais");
+                document.getElementById("email").focus();
+                return false;
+            }
+        }
+    </script>
+</html>

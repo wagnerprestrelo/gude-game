@@ -24,24 +24,28 @@ $dados = pegarDadosUsuario($link, $_SESSION["usuario_id"]);
                 <form id="jogador" action="logica_jogo.php">
                     <label for="par-impar">Par ou Ímpar?</label> <br>
                     <select id="par-impar" name="par-impar">
-                    <option value="par">Par</option>
-                    <option value="impar">Ímpar</option>
+                      <option value="par">Par</option>
+                      <option value="impar">Ímpar</option>
                     </select>
                     <br> <br>
                     <label for="num-jogador">Escolha um número: </label> <br>
                     <select id="num-jogador" name="num-jogador">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
                     </select>
-                    <input type="submit" id="botao-escolha">Selecionar número</input>
+                    <?php if ($dados["qtd_bolinhas"] > 0) { ?>
+                      <button type="submit" id="botao-escolha">Selecionar número</button>
+                    <?php } else { ?>
+                      <button type="submit" id="botao-escolha" disabled>Sem bolinhas.</button>
+                    <?php } ?>
                     <p id="escolha-jogador"></p>
                     <p>Vitórias: </p>
                     <p id="vitorias-jogador">0</p>

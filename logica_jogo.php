@@ -2,6 +2,13 @@
 session_start();
 include "funcoes.php";
 $link = conectarBancoDeDados();
+//pegar quantidade de bolinhas do jogador
+$dados = pegarDadosUsuario($link, $_SESSION["usuario_id"]);
+
+if ($dados["qtd_bolinhas"] == 0) {
+  exit("Você não possui mais bolinhas para jogar.");
+}
+
 $numjogador = $_GET["num-jogador"];
 $numadversario = rand(0, 9);
 $resultadofinal = $numjogador + $numadversario;

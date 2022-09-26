@@ -10,6 +10,7 @@ if ($dados["qtd_bolinhas"] == 0) {
 }
 
 $numjogador = $_GET["num-jogador"];
+$numaposta = $_GET["num-bolinhas"];
 $numadversario = rand(0, 9);
 $resultadofinal = $numjogador + $numadversario;
 if ($resultadofinal % 2 == 0) {
@@ -22,10 +23,10 @@ if ($resultadofinal % 2 == 0) {
 
 if ($_GET["par-impar"] == $resultadosoma) {
   //echo "Você venceu!";
-  adicionarBolinhas($link, $_SESSION["usuario_id"], 1);
+  adicionarBolinhas($link, $_SESSION["usuario_id"], $numaposta);
   header("Location: par_impar.php?vitoria=1&resultado=$resultadosoma&numero=$resultadofinal");
 } else {
   //echo "Você perdeu.";
-  removerBolinhas($link, $_SESSION["usuario_id"], 1);
+  removerBolinhas($link, $_SESSION["usuario_id"], $numaposta);
   header("Location: par_impar.php?vitoria=0&resultado=$resultadosoma&numero=$resultadofinal");
 }

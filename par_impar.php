@@ -41,20 +41,27 @@ $dados = pegarDadosUsuario($link, $_SESSION["usuario_id"]);
                       <option value="8">8</option>
                       <option value="9">9</option>
                     </select>
+                    <label for="num-bolinhas">Quantas bolinhas você vai apostar?</label> <br>
+                    <select id="num-bolinhas" name="num-bolinhas">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option> 
+                    </select>
                     <?php if ($dados["qtd_bolinhas"] > 0) { ?>
                       <button type="submit" id="botao-escolha">Selecionar número</button>
                     <?php } else { ?>
                       <button type="submit" id="botao-escolha" disabled>Sem bolinhas.</button>
                     <?php } ?>
-                    <p id="escolha-jogador"></p>
+                    
+                    <!--<p id="escolha-jogador"></p>
                     <p>Vitórias: </p>
-                    <p id="vitorias-jogador">0</p>
+                    <p id="vitorias-jogador">0</p>-->
                 </form>
                 <div id="adversario">
                     <p>Número do adversário:</p>
                     <p id="escolha-adversario"></p>
-                    <p>Vitórias: </p>
-                    <p id="vitorias-adversario">0</p>
+                    <!--<p>Vitórias: </p>
+                    <p id="vitorias-adversario">0</p>-->
                 </div>
 
                 <?php if (isset($_GET["vitoria"])) { ?>

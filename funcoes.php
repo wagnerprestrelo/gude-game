@@ -1,6 +1,6 @@
 <?php 
 function conectarBancoDeDados() {
-  $link = mysqli_connect("localhost", "root", "", "gude_game");
+  $link = mysqli_connect("localhost", "root", "kPv34esaV61f", "gude_game");
   return $link;
 }
 
@@ -23,7 +23,7 @@ function inserirUsuario($link) {
   if ($result->num_rows > 0) {
     echo "<p>Usuário e/ou email já cadastrado(s).</p>";
   } else {
-    $result = mysqli_query($link, "INSERT INTO usuarios (login, senha, email) VALUES ('{$_POST['login']}', '{$_POST['senha']}', '{$_POST['email']}')");
+    $result = mysqli_query($link, "INSERT INTO usuarios (login, senha, email, qtd_bolinhas) VALUES ('{$_POST['login']}', '{$_POST['senha']}', '{$_POST['email']}', 0)");
     header('Location: cadastro.html');
   }
 }
